@@ -2,3 +2,4 @@ hello.txt
 *.i
 *.o
 *.s
+*.elf
