@@ -27,5 +27,6 @@ main.i: main.c
 clean: 
 	rm -f main.i hello.txt
 	rm -f *.o
+	rm -f *.elf
 
 .PHONY: clean all
