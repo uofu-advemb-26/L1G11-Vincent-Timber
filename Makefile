@@ -10,7 +10,7 @@ main.s: main.i
 	$(CC) -S main.i
 
 %.o: %.s
-	$(AS) second.s -o second.o
+	$(AS) $< -o $@
 
 main.i: main.c
 	$(CPP) main.c > main.i
