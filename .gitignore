@@ -1,4 +1,4 @@
 hello.txt
-main.i
-main.o
-main.s
+*.i
+*.o
+*.s
