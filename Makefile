@@ -5,16 +5,16 @@ hello.txt:
 
 # CPP=$(ARM_NONE_EABI_GCC_PATH)
 PICO_TOOLCHAIN_PATH?=~/pico-sdk/toolchain/13_2_Rel1
-CPP=/bin/arm-none-eabi-cpp
-CC=/bin/arm-none-eabi-gcc
-AS=/bin/arm-none-eabi-as
-LD=/bin/arm-none-eabi-ld
+CPP=arm-none-eabi-cpp
+CC=arm-none-eabi-gcc
+AS=arm-none-eabi-as
+LD=arm-none-eabi-ld
 
 SRC=main.c second.c
 OBJS=$(patsubst %.c,%.o,$(SRC))
 
 firmware.elf: $(OBJS)
-	ls -a $(ARM_NONE_EABI_GCC_PATH)/bin
+# 	ls -a $(ARM_NONE_EABI_GCC_PATH)/bin
 	$(LD) -e main -o $@ $^
 
 main.s: main.i
