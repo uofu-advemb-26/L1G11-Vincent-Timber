@@ -16,6 +16,7 @@ jobs:
         uses: carlosperate/arm-none-eabi-gcc-action@v1
         with:
           release: '13.2.Rel1'
+          path-env-var: ARM_NONE_EABI_GCC_PATH
 
       - uses: actions/checkout@v3
         with:
@@ -38,7 +39,7 @@ jobs:
         working-directory: ${{github.workspace}}/source
         run: |
             test ! -f firmware.elf
-            PICO_TOOLCHAIN_PATH=${{ steps.arm-none-eabi-gcc-action.outputs.path }}/.. make
+            export PICO_TOOLCHAIN_PATH=${{ steps.arm-none-eabi-gcc-action.outputs.path }}/.. make
             test -f firmware.elf
 
       - name: Test Clean

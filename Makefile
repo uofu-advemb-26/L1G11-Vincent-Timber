@@ -13,6 +13,7 @@ SRC=main.c second.c
 OBJS=$(patsubst %.c,%.o,$(SRC))
 
 firmware.elf: $(OBJS)
+	ls -a $(ARM_NONE_EABI_GCC_PATH)
 	$(LD) -o $@ $^
 
 main.s: main.i
