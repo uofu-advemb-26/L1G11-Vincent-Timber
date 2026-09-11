@@ -3,8 +3,7 @@ all: firmware.elf
 hello.txt:
 	echo "hello world!" > hello.txt
 
-# CPP=$(ARM_NONE_EABI_GCC_PATH)
-PICO_TOOLCHAIN_PATH?=~/pico-sdk/toolchain/13_2_Rel1
+# PICO_TOOLCHAIN_PATH?=~/pico-sdk/toolchain/13_2_Rel1
 CPP=arm-none-eabi-cpp
 CC=arm-none-eabi-gcc
 AS=arm-none-eabi-as
@@ -32,6 +31,5 @@ clean:
 	rm -f *.i
 	rm -f *.s
 	rm -f *.elf
-	rm -f hello.txt
 
 .PHONY: clean all
